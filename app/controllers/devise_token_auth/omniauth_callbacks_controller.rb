@@ -99,13 +99,7 @@ module DeviseTokenAuth
     end
 
     def resource_class(mapping = nil)
-      if omniauth_params['resource_class']
-        omniauth_params['resource_class'].constantize
-      elsif params['resource_class']
-        params['resource_class'].constantize
-      else
-        raise "No resource_class found"
-      end
+      User
     end
 
     def resource_name
